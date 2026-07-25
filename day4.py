@@ -3,4 +3,4 @@ umur = int(input("Masukkan umur Anda :"))
 jurusan = str(input("Masukkan jurusan Anda :"))
 makanan_favorit = str(input("Masukkan makanan favorit Anda :"))
 
-print (f"Hallo {nama} umur kamu {umur} tahun, jurusan yang kamu ambil {jurusan} dan makanan_favoritmu adalah {makanan_favorit}")
+print (f"Hallo {nama} umur kamu {umur} tahun, jurusan yang kamu ambil adalah {jurusan} dan makanan_favoritmu adalah {makanan_favorit}")
