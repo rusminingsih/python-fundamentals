@@ -1,7 +1,6 @@
 import sys
 import time
 
-
 def lirik():
     lirik = [
         ("If you ever leave me, baby", 0.1),
