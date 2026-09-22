@@ -1,7 +1,6 @@
 import sys
 import operator  # library untuk me-sort kelasnya
 
-
 class Node:
     def __init__(self, state, parent, action, heuristic):
         self.state = state
@@ -9,7 +8,6 @@ class Node:
         self.action = action
         # nilai heuristic
         self.heuristic = heuristic
-
 
 class Greedy:
     def __init__(self):
@@ -33,7 +31,6 @@ class Greedy:
             node = self.frontier[0]
             self.frontier = self.frontier[1:]
             return node
-
 
 class Maze:
     def __init__(self, filename):
@@ -218,8 +215,6 @@ class Maze:
                 )
 
         img.save(filename)
-
-
 if len(sys.argv) != 2:
     sys.exit("Usage in terminal: python maze.py maze.txt")
 
