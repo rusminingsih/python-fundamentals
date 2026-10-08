@@ -1,14 +1,12 @@
 import sys
 import operator  # library untuk me-sort node di frontier berdasarkan heuristik
 
-
 class Node:
     def __init__(self, state, parent, action, heuristic):
         self.state = state
         self.parent = parent
         self.action = action
         self.heuristic = heuristic  # nilai heuristic (estimasi jarak ke goal)
-
 
 class Greedy:
     """Frontier untuk algoritma Greedy Best-First Search.
@@ -35,7 +33,6 @@ class Greedy:
             node = self.frontier[0]
             self.frontier = self.frontier[1:]
             return node
-
 
 class Maze:
     def __init__(self, filename):
