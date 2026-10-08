@@ -1,7 +1,6 @@
 import heapq
 from collections import deque
 
-
 # =========================================================
 # 1. BACA DATA
 # =========================================================
@@ -21,7 +20,6 @@ def load_graph(filename="jalan.txt"):
             graph.setdefault(city2, []).append((city1, cost))
     return graph
 
-
 def load_heuristic(filename="heuristicjalan.txt"):
     """Membaca heuristicjalan.txt -> dict {kota: nilai heuristik ke Bucharest}"""
     h = {}
@@ -36,14 +34,12 @@ def load_heuristic(filename="heuristicjalan.txt"):
             h[node] = val
     return h
 
-
 def reconstruct_path(parent, start, goal):
     path = [goal]
     while path[-1] != start:
         path.append(parent[path[-1]])
     path.reverse()
     return path
-
 
 def path_cost(graph, path):
     """Menghitung total jarak dari sebuah rute yang sudah ditemukan."""
@@ -54,7 +50,6 @@ def path_cost(graph, path):
                 total += cost
                 break
     return total
-
 
 # =========================================================
 # 2. ALGORITMA PENCARIAN
@@ -116,7 +111,6 @@ def ucs(graph, start, goal):
                 heapq.heappush(frontier, (new_cost, neighbor))
     return None, explored, None
 
-
 def gbfs(graph, start, goal, h):
     """Greedy Best-First Search: hanya mengejar h(n), tidak peduli biaya yang sudah ditempuh."""
     frontier = [(h.get(start, 0), start)]
@@ -137,7 +131,6 @@ def gbfs(graph, start, goal, h):
                 heapq.heappush(frontier, (h.get(neighbor, 0), neighbor))
     return None, explored
 
-
 def astar(graph, start, goal, h):
     """A*: memilih node dengan f(n) = g(n) + h(n) terkecil, meng-update g(n) bila jalur lebih murah ditemukan."""
     frontier = [(h.get(start, 0), start)]
@@ -157,7 +150,6 @@ def astar(graph, start, goal, h):
                 f_score = tentative_g + h.get(neighbor, 0)
                 heapq.heappush(frontier, (f_score, neighbor))
     return None, explored, None
-
 
 # =========================================================
 # 3. PROGRAM UTAMA (MENU PILIHAN ALGORITMA)
